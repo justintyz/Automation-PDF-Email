@@ -79,6 +79,10 @@ def main(argv):
   # Attach the PDF to the email
   reports.generate("cars.pdf", "Sales Summary", additional_info, cars_dict_to_table(data))
 
+<<<<<<< HEAD
+=======
+  # TODO: send the PDF report as an email attachment
+>>>>>>> 423372c63c9823c89298eac428f2ce2f9233ede9
   sender = "XXX@hotmail.com"
   # receiver = "{}@example.com".format(os.environ.get('USER'))
   receiver = "XXX@gmail.com"
