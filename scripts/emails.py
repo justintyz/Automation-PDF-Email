@@ -31,25 +31,26 @@ def generate(sender, recipient, subject, body, attachment_path):
 def send(message):
   """Sends the message to the configured SMTP server."""
   # Your Hotmail credentials
-  sender_email = "tyzjustin@hotmail.com"
-  sender_password = "tyz7099E!"
+  sender_email = "XXX@hotmail.com"
+  sender_password = "XXX"
 
   # Recipient Gmail address
-  receiver_email = "tyzjustin@gmail.com"
+  receiver_email = "XXX@gmail.com"
   
   # Create SMTP session
-  parameters = smtplib.SMTP("smtp.office365.com", 587)
-  with parameters.connect("smtp.office365.com", 587) as server:
-      server.starttls()  # Enable TLS encryption
-      server.login(sender_email, sender_password)
-      server.send_message(message, sender_email, receiver_email)
-      # server.quit()
+  server = smtplib.SMTP("smtp.office365.com", 587)
+  server.connect("smtp.office365.com", 587)
+  server.starttls()  # Enable TLS encryption
+  server.login(sender_email, sender_password)
+  server.sendmail(sender_email, receiver_email, message.as_string())
+  server.quit()
   # try:
-  #   with parameters.connect("smtp.office365.com", 587) as server:
+  #   with smtplib.SMTP("smtp.office365.com", 587) as server:
+  #       server.connect("smtp.office365.com", 587)
   #       server.starttls()  # Enable TLS encryption
   #       server.login(sender_email, sender_password)
-  #       server.send_message(message, sender_email, receiver_email)
-  #       # server.quit()
+  #       server.sendmail(sender_email, receiver_email, message.as_string())
+  #       server.quit()
   #   print("Email sent successfully!")
   # except Exception as e:
   #   print(f"An error occurred: {e}")
