@@ -31,11 +31,11 @@ def generate(sender, recipient, subject, body, attachment_path):
 def send(message):
   """Sends the message to the configured SMTP server."""
   # Your Hotmail credentials
-  sender_email = "tyzjustin@hotmail.com"
-  sender_password = "tyz7099E!"
+  sender_email = "XXX@hotmail.com"
+  sender_password = "XXX"
 
   # Recipient Gmail address
-  receiver_email = "tyzjustin@gmail.com"
+  receiver_email = "XXX@gmail.com"
   
   # Create SMTP session
   parameters = smtplib.SMTP("smtp.office365.com", 587)
