@@ -84,9 +84,9 @@ def main(argv):
   reports.generate("cars.pdf", "Sales Summary", additional_info, cars_dict_to_table(data))
 
   # TODO: send the PDF report as an email attachment
-  sender = "tyzjustin@hotmail.com"
+  sender = "XXX@hotmail.com"
   # receiver = "{}@example.com".format(os.environ.get('USER'))
-  receiver = "tyzjustin@gmail.com"
+  receiver = "XXX@gmail.com"
   subject = "Sales Summary for last month"
   body = additional_info.replace("<br/>", "\n")
 
