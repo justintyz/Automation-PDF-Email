@@ -36,14 +36,14 @@ def process_data(data):
       item["revenue"] = item_revenue
       max_revenue = item
     summary = [
-    "The {} generated the most revenue: ${}".format(format_car(max_revenue["car"]), max_revenue["revenue"]),
+    "The {} generated the most revenue: ${:,.2f}".format(format_car(max_revenue["car"]), max_revenue["revenue"]),
     ]
     # TODO: also handle max sales
     item_sales = item["total_sales"]
     if item_sales > max_sales["total_sales"]:
       item["total_sales"] = item_sales
       max_sales = item
-    summary.append("The {} generated the most sales: {}".format(format_car(max_sales["car"]), max_sales["total_sales"]))
+    summary.append("The {} generated the most sales: {:,}".format(format_car(max_sales["car"]), max_sales["total_sales"]))
 
     # TODO: also handle most popular car_year
     year = set()
@@ -54,7 +54,7 @@ def process_data(data):
     for item in data:
       if item['car']['car_year'] in year_sales:
         year_sales[item['car']['car_year']] += item["total_sales"]
-    summary.append("The most popular year was {} with {} sales.".format(max(year_sales, key=year_sales.get), year_sales[max(year_sales, key=year_sales.get)]))
+    summary.append("The most popular year was {} with {:,} sales.".format(max(year_sales, key=year_sales.get), year_sales[max(year_sales, key=year_sales.get)]))
     
 
   
